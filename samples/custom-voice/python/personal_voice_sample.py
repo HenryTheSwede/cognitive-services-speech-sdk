@@ -85,7 +85,7 @@ def clean_up(project_id: str, consent_id: str, personal_voice_id: str):
 
 
 region = 'eastus' # eastus, westeurope, southeastasia
-key = 'your speech key here'
+key = '38acf93326ad4b6b97d32f04aa64dd78'
 
 
 logging.basicConfig(filename="customvoice.log",
@@ -108,14 +108,14 @@ try:
     # I [voice talent name] am aware that recordings of my voice will be used by [company name] to create and use a synthetic version of my voice.
     # You can find sample consent file here
     # https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice/Sample%20Data/Individual%20utterances%20%2B%20matching%20script/VoiceTalentVerbalStatement.wav
-    consent_file_path = r'TestData\\VoiceTalentVerbalStatement.wav'
+    consent_file_path = r'/workspaces/cognitive-services-speech-sdk/samples/custom-voice/python/TestData/VoiceTalentVerbalStatement.wav'
     voice_talent_name = 'Sample Voice Actor'
     company_name = 'Contoso'
 
     # Need 5 - 90 seconds audio file.
     # You can find sample audio file here.
     # https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice/Sample%20Data/Individual%20utterances%20%2B%20matching%20script/SampleAudios.zip
-    audio_folder = r'TestData\\voice\\'
+    audio_folder = r'/workspaces/cognitive-services-speech-sdk/samples/custom-voice/python/TestData/voice'
     speaker_profile_id = create_personal_voice(project_id, 
                                             consent_id, consent_file_path, voice_talent_name, company_name,
                                             personal_voice_id, audio_folder)
